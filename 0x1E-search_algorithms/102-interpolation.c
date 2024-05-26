@@ -3,11 +3,11 @@
 /**
  * interpolation_search - Searches for a value in a sorted array of integers
  * using the Interpolation search algorithm.
- * @array: Pointer to the first element of the array
+ * @array: Pointer to the first element of the array to search in
  * @size: Number of elements in the array
  * @value: Value to search for
  *
- * Return: The first index where value is located, otherwise -1
+ * Return: The index where value is located, otherwise -1
  */
 int interpolation_search(int *array, size_t size, int value)
 {
