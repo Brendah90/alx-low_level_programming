@@ -2,25 +2,13 @@
 #include <math.h>
 
 /**
- * min - Returns the minimum of 2 values
- * @a: First value
- * @b: Second value
- *
- * Return: The minimum of 2 values
-*/
-size_t min(size_t a, size_t b)
-{
-	return ((a < b) ? a : b);
-}
-
-/**
  * jump_search - Searches for a value in a sorted array of integers using
  * the Jump search algorithm.
  * @array: Pointer to the first element of the array
- * @size: Number of elements in the array
+ * @size: Number of elements in array
  * @value: Value to search for
  *
- * Return: The first index where value is located, otherwise -1
+ * Return: The index where value is located, otherwise -1
  */
 int jump_search(int *array, size_t size, int value)
 {
@@ -42,7 +30,9 @@ int jump_search(int *array, size_t size, int value)
 	}
 
 	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
-	jump = min(jump, size - 1);
+	jump = jump < size ? jump : size - 1;
+
+	/* Find the exact position of the value */
 	while (i < jump && array[i] < value)
 	{
 		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
